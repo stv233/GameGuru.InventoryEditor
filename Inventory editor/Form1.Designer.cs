@@ -35,10 +35,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.IpbBackground = new System.Windows.Forms.PictureBox();
+            this.IpbItemZone = new System.Windows.Forms.PictureBox();
             this.ImsMainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBackground)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IpbItemZone)).BeginInit();
             this.SuspendLayout();
             // 
             // ImsMainMenu
@@ -71,6 +73,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.IpbItemZone);
             this.tabPage1.Controls.Add(this.IpbBackground);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -111,6 +114,17 @@
             this.IpbBackground.TabIndex = 0;
             this.IpbBackground.TabStop = false;
             // 
+            // IpbItemZone
+            // 
+            this.IpbItemZone.BackgroundImage = global::Inventory_editor.Properties.Resources.EmptyBackGround;
+            this.IpbItemZone.Image = global::Inventory_editor.Properties.Resources.itemzone;
+            this.IpbItemZone.Location = new System.Drawing.Point(528, 33);
+            this.IpbItemZone.Name = "IpbItemZone";
+            this.IpbItemZone.Size = new System.Drawing.Size(663, 398);
+            this.IpbItemZone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IpbItemZone.TabIndex = 1;
+            this.IpbItemZone.TabStop = false;
+            // 
             // IfrMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -129,6 +143,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IpbBackground)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IpbItemZone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +158,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.PictureBox IpbBackground;
+        private System.Windows.Forms.PictureBox IpbItemZone;
     }
 }
 
