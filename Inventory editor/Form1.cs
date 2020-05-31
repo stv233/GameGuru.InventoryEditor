@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.IO.Compression;
 
 namespace Inventory_editor
 {
@@ -478,6 +480,66 @@ namespace Inventory_editor
             IpbNumber98.Image = Numbers[97];
             IpbNumber97.Image = Numbers[96];
             IpbNumber96.Image = Numbers[95];
+        }
+
+        private void Save(string path)
+        {
+            string Appdata = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
+            string TempPath = Appdata + "Inventory editor/Saving";
+            Directory.CreateDirectory(TempPath);
+
+            IpbBackground.Image.Save(TempPath + "/background", System.Drawing.Imaging.ImageFormat.Png);
+            IpbBody.Image.Save(TempPath + "/body", System.Drawing.Imaging.ImageFormat.Png);
+            IpbBodyzone.Image.Save(TempPath + "/bodyzone", System.Drawing.Imaging.ImageFormat.Png);
+            IpbDelete.Image.Save(TempPath + "/delete", System.Drawing.Imaging.ImageFormat.Png);
+            Description.Save(TempPath + "/descriptionzone", System.Drawing.Imaging.ImageFormat.Png);
+            EmptySlot.Save(TempPath + "/emptyslot", System.Drawing.Imaging.ImageFormat.Png);
+            IpbEquip.Image.Save(TempPath + "/equip", System.Drawing.Imaging.ImageFormat.Png);
+            IpbItemZone.Image.Save(TempPath + "/itemzone", System.Drawing.Imaging.ImageFormat.Png);
+            Selector.Save(TempPath + "/selector", System.Drawing.Imaging.ImageFormat.Png);
+            IpbUnEquip.Image.Save(TempPath + "/unequip", System.Drawing.Imaging.ImageFormat.Png);
+            IpbUse.Image.Save(TempPath + "/use", System.Drawing.Imaging.ImageFormat.Png);
+            IpbWeaponSlot1.Image.Save(TempPath + "/weaponslot1", System.Drawing.Imaging.ImageFormat.Png);
+            IpbWeaponSlot2.Image.Save(TempPath + "/weaponslot2", System.Drawing.Imaging.ImageFormat.Png);
+
+            for (var i = 0; i < 100; i++)
+            {
+                Numbers[i].Save(TempPath + "/Numbers/" + i.ToString(), System.Drawing.Imaging.ImageFormat.Png);
+            }
+
+            File.Create(TempPath + "styleinfo").Close();
+            StreamWriter SW = File.AppendText(TempPath + "styleinfo");
+            SW.WriteLine(IpbBackground.Left);
+            SW.WriteLine(IpbBackground.Top);
+            SW.WriteLine(IpbBackground.Width);
+            SW.WriteLine(IpbBackground.Height);
+            SW.WriteLine(IpbItemZone.Left);
+            SW.WriteLine(IpbItemZone.Top);
+            SW.WriteLine(IpbItemZone.Width);
+            SW.WriteLine(IpbItemZone.Height);
+            SW.WriteLine(IpbBodyzone.Left);
+            SW.WriteLine(IpbBodyzone.Top);
+            SW.WriteLine(IpbBodyzone.Width);
+            SW.WriteLine(IpbBodyzone.Height);
+            SW.WriteLine(IpbDescriptionzone.Left);
+            SW.WriteLine(IpbDescriptionzone.Top);
+            SW.WriteLine(IpbDescriptionzone.Width);
+            SW.WriteLine(IpbDescriptionzone.Height);
+            SW.WriteLine(IpbBody.Left);
+            SW.WriteLine(IpbBody.Top);
+            SW.WriteLine(IpbBody.Width);
+            SW.WriteLine(IpbBody.Height);
+            SW.WriteLine(IpbWeaponSlot1.Left);
+            SW.WriteLine(IpbWeaponSlot1.Top);
+            SW.WriteLine(IpbWeaponSlot1.Width);
+            SW.WriteLine(IpbWeaponSlot1.Height);
+            SW.WriteLine(IpbWeaponSlot2.Left);
+            SW.WriteLine(IpbWeaponSlot2.Top);
+            SW.WriteLine(IpbWeaponSlot2.Width);
+            SW.WriteLine(IpbWeaponSlot2.Height);
+            SW.Close();
+
+            ZipFile.CreateFromDirectory(TempPath,path);
         }
     }
 }
