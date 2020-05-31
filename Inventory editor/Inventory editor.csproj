@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyBackGround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\bodyzone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\descriptionzone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\emptyslot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\equip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\itemzone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\selector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\unequip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\use.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\weaponslot1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default\weaponslot2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
