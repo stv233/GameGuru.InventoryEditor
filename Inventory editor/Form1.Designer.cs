@@ -60,14 +60,14 @@
             this.fileToolStripMenuItem});
             this.ImsMainMenu.Location = new System.Drawing.Point(0, 0);
             this.ImsMainMenu.Name = "ImsMainMenu";
-            this.ImsMainMenu.Size = new System.Drawing.Size(1342, 30);
+            this.ImsMainMenu.Size = new System.Drawing.Size(1342, 28);
             this.ImsMainMenu.TabIndex = 0;
             this.ImsMainMenu.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // ItcMain
@@ -170,6 +170,7 @@
             this.IpbItemZone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.IpbItemZone.TabIndex = 1;
             this.IpbItemZone.TabStop = false;
+            this.IpbItemZone.Resize += new System.EventHandler(this.IpbItemZone_Resize);
             // 
             // IpbBackground
             // 
@@ -188,7 +189,7 @@
             this.ItpSmall.Location = new System.Drawing.Point(4, 25);
             this.ItpSmall.Name = "ItpSmall";
             this.ItpSmall.Padding = new System.Windows.Forms.Padding(3);
-            this.ItpSmall.Size = new System.Drawing.Size(1290, 611);
+            this.ItpSmall.Size = new System.Drawing.Size(1336, 618);
             this.ItpSmall.TabIndex = 1;
             this.ItpSmall.Text = "Small element";
             this.ItpSmall.UseVisualStyleBackColor = true;
@@ -198,7 +199,7 @@
             this.ItpNumbers.Location = new System.Drawing.Point(4, 25);
             this.ItpNumbers.Name = "ItpNumbers";
             this.ItpNumbers.Padding = new System.Windows.Forms.Padding(3);
-            this.ItpNumbers.Size = new System.Drawing.Size(1290, 611);
+            this.ItpNumbers.Size = new System.Drawing.Size(1336, 618);
             this.ItpNumbers.TabIndex = 2;
             this.ItpNumbers.Text = "Numbers";
             this.ItpNumbers.UseVisualStyleBackColor = true;
