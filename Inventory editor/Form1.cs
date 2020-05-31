@@ -133,6 +133,18 @@ namespace Inventory_editor
 
             ReDrawEmptySlot();
 
+
+            // Селектор
+            IpbSelector.Image = Selector;
+            IpbUse.Image = Properties.Resources.use;
+            IpbUse.Click += SelectImage;
+            IpbEquip.Image = Properties.Resources.equip;
+            IpbEquip.Click += SelectImage;
+            IpbUnEquip.Image = Properties.Resources.unequip;
+            IpbUnEquip.Click += SelectImage;
+            IpbDelete.Image = Properties.Resources.delete;
+            IpbDelete.Click += SelectImage;
+
         }
 
         private void ReDrawEmptySlot()
@@ -395,6 +407,25 @@ namespace Inventory_editor
 
         private void IpbItemZone_Resize(object sender, EventArgs e)
         {
+            ReDrawEmptySlot();
+        }
+
+        private void IpbSelector_Click(object sender, EventArgs e)
+        {
+            var TIpbPictureBox = (PictureBox)sender;
+            var TIofdOpen = new OpenFileDialog
+            {
+                Title = "Загрузить изображение",
+                Filter = "PNG (*.png)|*.png|JPEG (*.jpg;*.jpeg;*.jpe;*jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Все файлы (*.*)|*.*"
+            };
+
+            if (TIofdOpen.ShowDialog() == DialogResult.OK)
+            {
+                var TBitMap = new Bitmap(TIofdOpen.FileName);
+                Selector = (Image)TBitMap;
+            }
+
+            TIpbPictureBox.Image = Selector;
             ReDrawEmptySlot();
         }
     }
