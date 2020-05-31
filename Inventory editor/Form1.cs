@@ -445,6 +445,7 @@ namespace Inventory_editor
 
         private void Generate()
         {
+
             for (var i = 0; i < 99; i++)
             {
                 Bitmap TBitMap = new Bitmap(500, 500);
@@ -452,11 +453,23 @@ namespace Inventory_editor
                 Graphics g = Graphics.FromImage(TImage);
                 if (i + 1 < 10)
                 {
-                    g.DrawString("0"+(i + 1).ToString(), new Font(ItbFontName.Text, 250, FontStyle.Bold), new SolidBrush(IlbColor.BackColor), 0, 45);
+                    using (var font = new Font(ItbFontName.Text, 250, FontStyle.Bold))
+                    {
+                        using (var brush = new SolidBrush(IlbColor.BackColor))
+                        {
+                            g.DrawString("0" + (i + 1).ToString(), font, brush, 0, 45);
+                        }
+                    }
                 }
                 else
                 {
-                    g.DrawString((i + 1).ToString(), new Font(ItbFontName.Text, 250, FontStyle.Bold), new SolidBrush(IlbColor.BackColor), 0, 45);
+                    using (var font = new Font(ItbFontName.Text, 250, FontStyle.Bold))
+                    {
+                        using (var brush = new SolidBrush(IlbColor.BackColor))
+                        {
+                            g.DrawString((i + 1).ToString(), font, brush, 0, 45);
+                        }
+                    }
                 }   
                 Numbers[i] = TImage;
             }
@@ -485,61 +498,118 @@ namespace Inventory_editor
         private void Save(string path)
         {
             string Appdata = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
-            string TempPath = Appdata + "Inventory editor/Saving";
+            string TempPath = Appdata + "\\Inventory editor\\Saving";
             Directory.CreateDirectory(TempPath);
 
-            IpbBackground.Image.Save(TempPath + "/background", System.Drawing.Imaging.ImageFormat.Png);
-            IpbBody.Image.Save(TempPath + "/body", System.Drawing.Imaging.ImageFormat.Png);
-            IpbBodyzone.Image.Save(TempPath + "/bodyzone", System.Drawing.Imaging.ImageFormat.Png);
-            IpbDelete.Image.Save(TempPath + "/delete", System.Drawing.Imaging.ImageFormat.Png);
-            Description.Save(TempPath + "/descriptionzone", System.Drawing.Imaging.ImageFormat.Png);
-            EmptySlot.Save(TempPath + "/emptyslot", System.Drawing.Imaging.ImageFormat.Png);
-            IpbEquip.Image.Save(TempPath + "/equip", System.Drawing.Imaging.ImageFormat.Png);
-            IpbItemZone.Image.Save(TempPath + "/itemzone", System.Drawing.Imaging.ImageFormat.Png);
-            Selector.Save(TempPath + "/selector", System.Drawing.Imaging.ImageFormat.Png);
-            IpbUnEquip.Image.Save(TempPath + "/unequip", System.Drawing.Imaging.ImageFormat.Png);
-            IpbUse.Image.Save(TempPath + "/use", System.Drawing.Imaging.ImageFormat.Png);
-            IpbWeaponSlot1.Image.Save(TempPath + "/weaponslot1", System.Drawing.Imaging.ImageFormat.Png);
-            IpbWeaponSlot2.Image.Save(TempPath + "/weaponslot2", System.Drawing.Imaging.ImageFormat.Png);
+            IpbBackground.Image.Save(TempPath + "\\background", System.Drawing.Imaging.ImageFormat.Png);
+            IpbBody.Image.Save(TempPath + "\\body", System.Drawing.Imaging.ImageFormat.Png);
+            IpbBodyzone.Image.Save(TempPath + "\\bodyzone", System.Drawing.Imaging.ImageFormat.Png);
+            IpbDelete.Image.Save(TempPath + "\\delete", System.Drawing.Imaging.ImageFormat.Png);
+            Description.Save(TempPath + "\\descriptionzone", System.Drawing.Imaging.ImageFormat.Png);
+            EmptySlot.Save(TempPath + "\\emptyslot", System.Drawing.Imaging.ImageFormat.Png);
+            IpbEquip.Image.Save(TempPath + "\\equip", System.Drawing.Imaging.ImageFormat.Png);
+            IpbItemZone.Image.Save(TempPath + "\\itemzone", System.Drawing.Imaging.ImageFormat.Png);
+            Selector.Save(TempPath + "\\selector", System.Drawing.Imaging.ImageFormat.Png);
+            IpbUnEquip.Image.Save(TempPath + "\\unequip", System.Drawing.Imaging.ImageFormat.Png);
+            IpbUse.Image.Save(TempPath + "\\use", System.Drawing.Imaging.ImageFormat.Png);
+            IpbWeaponSlot1.Image.Save(TempPath + "\\weaponslot1", System.Drawing.Imaging.ImageFormat.Png);
+            IpbWeaponSlot2.Image.Save(TempPath + "\\weaponslot2", System.Drawing.Imaging.ImageFormat.Png);
 
+            Directory.CreateDirectory(TempPath + "\\Numbers\\");
             for (var i = 0; i < 100; i++)
             {
-                Numbers[i].Save(TempPath + "/Numbers/" + i.ToString(), System.Drawing.Imaging.ImageFormat.Png);
+                var Temp = (Image)(Bitmap)Numbers[i];
+                Temp.Save(TempPath + "\\Numbers\\" + i.ToString(), System.Drawing.Imaging.ImageFormat.Png);
+
             }
 
-            File.Create(TempPath + "styleinfo").Close();
-            StreamWriter SW = File.AppendText(TempPath + "styleinfo");
-            SW.WriteLine(IpbBackground.Left);
-            SW.WriteLine(IpbBackground.Top);
-            SW.WriteLine(IpbBackground.Width);
-            SW.WriteLine(IpbBackground.Height);
-            SW.WriteLine(IpbItemZone.Left);
-            SW.WriteLine(IpbItemZone.Top);
-            SW.WriteLine(IpbItemZone.Width);
-            SW.WriteLine(IpbItemZone.Height);
-            SW.WriteLine(IpbBodyzone.Left);
-            SW.WriteLine(IpbBodyzone.Top);
-            SW.WriteLine(IpbBodyzone.Width);
-            SW.WriteLine(IpbBodyzone.Height);
-            SW.WriteLine(IpbDescriptionzone.Left);
-            SW.WriteLine(IpbDescriptionzone.Top);
-            SW.WriteLine(IpbDescriptionzone.Width);
-            SW.WriteLine(IpbDescriptionzone.Height);
-            SW.WriteLine(IpbBody.Left);
-            SW.WriteLine(IpbBody.Top);
-            SW.WriteLine(IpbBody.Width);
+            File.Create(TempPath + "\\styleinfo").Close();
+            StreamWriter SW = File.AppendText(TempPath + "\\styleinfo");
+            SW.WriteLine(IpbBackground.Left.ToString());
+            SW.WriteLine(IpbBackground.Top.ToString());
+            SW.WriteLine(IpbBackground.Width.ToString());
+            SW.WriteLine(IpbBackground.Height.ToString());
+            SW.WriteLine(IpbItemZone.Left.ToString());
+            SW.WriteLine(IpbItemZone.Top.ToString());
+            SW.WriteLine(IpbItemZone.Width.ToString());
+            SW.WriteLine(IpbItemZone.Height.ToString());
+            SW.WriteLine(IpbBodyzone.Left.ToString());
+            SW.WriteLine(IpbBodyzone.Top.ToString());
+            SW.WriteLine(IpbBodyzone.Width.ToString());
+            SW.WriteLine(IpbBodyzone.Height.ToString());
+            SW.WriteLine(IpbDescriptionzone.Left.ToString());
+            SW.WriteLine(IpbDescriptionzone.Top.ToString());
+            SW.WriteLine(IpbDescriptionzone.Width.ToString());
+            SW.WriteLine(IpbDescriptionzone.Height.ToString());
+            SW.WriteLine(IpbBody.Left.ToString());
+            SW.WriteLine(IpbBody.Top.ToString());
+            SW.WriteLine(IpbBody.Width.ToString());
             SW.WriteLine(IpbBody.Height);
-            SW.WriteLine(IpbWeaponSlot1.Left);
-            SW.WriteLine(IpbWeaponSlot1.Top);
-            SW.WriteLine(IpbWeaponSlot1.Width);
-            SW.WriteLine(IpbWeaponSlot1.Height);
-            SW.WriteLine(IpbWeaponSlot2.Left);
-            SW.WriteLine(IpbWeaponSlot2.Top);
-            SW.WriteLine(IpbWeaponSlot2.Width);
-            SW.WriteLine(IpbWeaponSlot2.Height);
+            SW.WriteLine(IpbWeaponSlot1.Left.ToString());
+            SW.WriteLine(IpbWeaponSlot1.Top.ToString());
+            SW.WriteLine(IpbWeaponSlot1.Width.ToString());
+            SW.WriteLine(IpbWeaponSlot1.Height.ToString());
+            SW.WriteLine(IpbWeaponSlot2.Left.ToString());
+            SW.WriteLine(IpbWeaponSlot2.Top.ToString());
+            SW.WriteLine(IpbWeaponSlot2.Width.ToString());
+            SW.WriteLine(IpbWeaponSlot2.Height.ToString());
+            SW.WriteLine(ItbFontName.Text);
+            SW.WriteLine((IlbColor.BackColor).ToKnownColor().ToString());
             SW.Close();
 
-            ZipFile.CreateFromDirectory(TempPath,path);
+            try
+            {
+                ZipFile.CreateFromDirectory(TempPath, path);
+            }
+            catch(System.IO.IOException)
+            {
+                File.Delete(path);
+                ZipFile.CreateFromDirectory(TempPath, path);
+            }
+            Directory.Delete(TempPath, true);
+        }
+
+        private void Open(string path)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+        }
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (
+            var TIsfdSaveDialog = new SaveFileDialog
+            {
+                Title = "Save as",
+                FileName = "Inventory style.ieis",
+                Filter = "Inventory style (*.ieis)|*.ieis|All file (*.*)|*.*"
+            })
+            {
+
+                if (TIsfdSaveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var TIlbSaving = new Label
+                    {
+                        AutoSize = true,
+                        Text = "Saving...",
+                        Parent = this
+                    };
+                    TIlbSaving.Left = this.Width / 2 - TIlbSaving.Width / 2;
+                    TIlbSaving.Top = this.Height / 2 - TIlbSaving.Height / 2;
+                    TIlbSaving.BringToFront();
+                    ItcMain.Enabled = false;
+
+                    Save(TIsfdSaveDialog.FileName);
+
+                    TIlbSaving.Dispose();
+                    ItcMain.Enabled = true;
+                }
+            }
         }
     }
 }
