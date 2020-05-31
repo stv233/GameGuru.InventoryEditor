@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inventory_editor
 {
-    public partial class Form1 : Form
+    public partial class IfrMain : Form
     {
-        public Form1()
+        public IfrMain()
         {
             InitializeComponent();
         }

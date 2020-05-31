@@ -1,6 +1,6 @@
 ﻿namespace Inventory_editor
 {
-    partial class Form1
+    partial class IfrMain
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // IfrMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1223, 666);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "IfrMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Inventory edittor";
+            this.UseWaitCursor = true;
+            this.ResumeLayout(false);
+
         }
 
         #endregion
