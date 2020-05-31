@@ -182,6 +182,29 @@ namespace Inventory_editor
             IpbWeaponSlot2.Width = 28 * WPercent;
             IpbWeaponSlot2.Height = 15 * HPercent;
         }
+
+        private void ResetImages()
+        {
+            IpbBackground.Image = Properties.Resources.background;
+            IpbItemZone.Image = Properties.Resources.itemzone;
+            IpbBodyzone.Image = Properties.Resources.bodyzone;
+            Description = Properties.Resources.descriptionzone;
+            IpbDescriptionzone.Image = Description;
+            Graphics g = Graphics.FromImage(IpbDescriptionzone.Image);
+            g.DrawString("Description of item.", new Font("MV Boli", 45, FontStyle.Bold), new SolidBrush(Color.Blue), WPercent, HPercent);
+            IpbBody.Image = Properties.Resources.body;
+            IpbWeaponSlot1.Image = Properties.Resources.weaponslot1;
+            IpbWeaponSlot2.Image = Properties.Resources.weaponslot2;
+            EmptySlot = Properties.Resources.emptyslot;
+            Selector = Properties.Resources.selector;
+            IpbSelector.Image = Selector;
+            ReDrawEmptySlot();
+            IpbEquip.Image = Properties.Resources.equip;
+            IpbUse.Image = Properties.Resources.use;
+            IpbUnEquip.Image = Properties.Resources.unequip;
+            IpbDelete.Image = Properties.Resources.delete;
+        }
+
         private void ReDrawEmptySlot()
         {
             IpbItemZone.Controls.Clear();
@@ -793,6 +816,28 @@ namespace Inventory_editor
                 == DialogResult.Yes)
             {
                 ResetLocation();
+            }
+        }
+
+        private void resetImagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to reset the images?", "Reset images", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                ResetImages();
+            }
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to create a new inventory style?", "New style", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                ResetLocation();
+                ResetImages();
+                ItbFontName.Text = "Microsoft Sans Serif";
+                IlbColor.BackColor = ColorTranslator.FromHtml("DodgerBlue");
+                IbtGenerate_Click(new object(), new EventArgs());
             }
         }
     }

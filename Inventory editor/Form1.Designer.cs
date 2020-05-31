@@ -69,6 +69,7 @@
             this.ItbFontName = new System.Windows.Forms.TextBox();
             this.editingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ImsMainMenu.SuspendLayout();
             this.ItcMain.SuspendLayout();
             this.ItpInventory.SuspendLayout();
@@ -125,6 +126,7 @@
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
@@ -536,7 +538,8 @@
             // editingToolStripMenuItem
             // 
             this.editingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.resetLocationToolStripMenuItem});
+            this.resetLocationToolStripMenuItem,
+            this.resetImagesToolStripMenuItem});
             this.editingToolStripMenuItem.Name = "editingToolStripMenuItem";
             this.editingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.editingToolStripMenuItem.Text = "Editing";
@@ -547,6 +550,13 @@
             this.resetLocationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.resetLocationToolStripMenuItem.Text = "Reset Location";
             this.resetLocationToolStripMenuItem.Click += new System.EventHandler(this.resetLocationToolStripMenuItem_Click);
+            // 
+            // resetImagesToolStripMenuItem
+            // 
+            this.resetImagesToolStripMenuItem.Name = "resetImagesToolStripMenuItem";
+            this.resetImagesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.resetImagesToolStripMenuItem.Text = "Reset Images";
+            this.resetImagesToolStripMenuItem.Click += new System.EventHandler(this.resetImagesToolStripMenuItem_Click);
             // 
             // IfrMain
             // 
@@ -640,6 +650,7 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetLocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetImagesToolStripMenuItem;
     }
 }
 
