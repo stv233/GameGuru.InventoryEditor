@@ -23,6 +23,7 @@ namespace Inventory_editor
         Image EmptySlot = Properties.Resources.emptyslot;
         Image Selector = Properties.Resources.selector;
         Image Description = Properties.Resources.descriptionzone;
+        Image[] Numbers = new Image[100];
 
         private struct Mouse
         {
@@ -132,6 +133,7 @@ namespace Inventory_editor
             IpbWeaponSlot2.Cursor = System.Windows.Forms.Cursors.Arrow;
 
             ReDrawEmptySlot();
+            IbtGenerate_Click(sender, e);
 
 
             // Селектор
@@ -427,6 +429,55 @@ namespace Inventory_editor
 
             TIpbPictureBox.Image = Selector;
             ReDrawEmptySlot();
+        }
+
+        private void IlbColor_Click(object sender, EventArgs e)
+        {
+            var TIlbLabel = (Label)sender;
+            var TIcdColor = new ColorDialog();
+            if (TIcdColor.ShowDialog() == DialogResult.OK)
+            {
+                TIlbLabel.BackColor = TIcdColor.Color;
+            }
+        }
+
+        private void Generate()
+        {
+            for (var i = 0; i < 99; i++)
+            {
+                Bitmap TBitMap = new Bitmap(500, 500);
+                Image TImage = (Image)TBitMap;
+                Graphics g = Graphics.FromImage(TImage);
+                if (i + 1 < 10)
+                {
+                    g.DrawString("0"+(i + 1).ToString(), new Font(ItbFontName.Text, 250, FontStyle.Bold), new SolidBrush(IlbColor.BackColor), 0, 45);
+                }
+                else
+                {
+                    g.DrawString((i + 1).ToString(), new Font(ItbFontName.Text, 250, FontStyle.Bold), new SolidBrush(IlbColor.BackColor), 0, 45);
+                }   
+                Numbers[i] = TImage;
+            }
+            Bitmap TTBitMap = new Bitmap(500, 500);
+            Image TTImage = (Image)TTBitMap;
+            Graphics gr = Graphics.FromImage(TTImage);
+            gr.DrawString("99+", new Font(ItbFontName.Text, 190, FontStyle.Bold), new SolidBrush(IlbColor.BackColor), 0, 80);
+            Numbers[99] = TTImage;
+        }
+
+        private void IbtGenerate_Click(object sender, EventArgs e)
+        {
+            Generate();
+            IpbNumber1.Image = Numbers[0];
+            IpbNumber2.Image = Numbers[1];
+            IpbNumber3.Image = Numbers[2];
+            IpbNumber4.Image = Numbers[3];
+            IpbNumber5.Image = Numbers[4];
+            IpbNumber99AndMore.Image = Numbers[99];
+            IpbNumber99.Image = Numbers[98];
+            IpbNumber98.Image = Numbers[97];
+            IpbNumber97.Image = Numbers[96];
+            IpbNumber96.Image = Numbers[95];
         }
     }
 }
