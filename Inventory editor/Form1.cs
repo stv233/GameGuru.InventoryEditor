@@ -45,6 +45,8 @@ namespace Inventory_editor
 
         private void IfrMain_Load(object sender, EventArgs e)
         {
+            var IttTip = new ToolTip();
+
             WPercent = Convert.ToInt32(ItpInventory.ClientSize.Width / 100);
             HPercent = Convert.ToInt32(ItpInventory.ClientSize.Height / 100);
 
@@ -57,6 +59,7 @@ namespace Inventory_editor
             IpbBackground.Height = 100 * HPercent;
             IpbBackground.DoubleClick += SelectImage;
             IpbBackground.Tag = new Mouse(false, false, 0, 0);
+            IttTip.SetToolTip(IpbBackground,"Background");
 
             // Зона предметов.
             IpbItemZone.Left = 32 * WPercent;
@@ -69,6 +72,7 @@ namespace Inventory_editor
             IpbItemZone.MouseMove += Moved_MouseMove;
             IpbItemZone.MouseUp += Moved_MouseUp;
             IpbItemZone.Cursor = System.Windows.Forms.Cursors.Arrow;
+            IttTip.SetToolTip(IpbItemZone, "Item zone");
 
             // Зона тела.
             IpbBodyzone.Left = 1 * WPercent;
@@ -81,6 +85,7 @@ namespace Inventory_editor
             IpbBodyzone.MouseMove += Moved_MouseMove;
             IpbBodyzone.MouseUp += Moved_MouseUp;
             IpbBodyzone.Cursor = System.Windows.Forms.Cursors.Arrow;
+            IttTip.SetToolTip(IpbBodyzone, "Decoration zone");
 
             // Зона описания.
             IpbDescriptionzone.Left = 32 * WPercent;
@@ -96,6 +101,7 @@ namespace Inventory_editor
             IpbDescriptionzone.MouseMove += Moved_MouseMove;
             IpbDescriptionzone.MouseUp += Moved_MouseUp;
             IpbDescriptionzone.Cursor = System.Windows.Forms.Cursors.Arrow;
+            IttTip.SetToolTip(IpbDescriptionzone, "Description zone");
 
 
             // Тело.
@@ -109,6 +115,7 @@ namespace Inventory_editor
             IpbBody.MouseMove += Moved_MouseMove;
             IpbBody.MouseUp += Moved_MouseUp;
             IpbBody.Cursor = System.Windows.Forms.Cursors.Arrow;
+            IttTip.SetToolTip(IpbBody, "Decoration");
 
             // Слот оружия 1.
             IpbWeaponSlot1.Left = 1 * WPercent;
@@ -121,6 +128,7 @@ namespace Inventory_editor
             IpbWeaponSlot1.MouseMove += Moved_MouseMove;
             IpbWeaponSlot1.MouseUp += Moved_MouseUp;
             IpbWeaponSlot1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            IttTip.SetToolTip(IpbWeaponSlot1, "Weapon Slot 1");
 
             // Слот оружия 2.
             IpbWeaponSlot2.Left = 1 * WPercent;
@@ -133,6 +141,7 @@ namespace Inventory_editor
             IpbWeaponSlot2.MouseMove += Moved_MouseMove;
             IpbWeaponSlot2.MouseUp += Moved_MouseUp;
             IpbWeaponSlot2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            IttTip.SetToolTip(IpbWeaponSlot2, "Weapon Slot 2");
 
             ReDrawEmptySlot();
             IbtGenerate_Click(sender, e);
@@ -207,6 +216,7 @@ namespace Inventory_editor
 
         private void ReDrawEmptySlot()
         {
+            var IttTip = new ToolTip();
             IpbItemZone.Controls.Clear();
 
             var IpbEmptySlot1 = new PictureBox
@@ -222,6 +232,7 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbEmptySlot1.DoubleClick += SelectImageEmptySlot;
+            IttTip.SetToolTip(IpbEmptySlot1, "Empty Slot");
 
             var IpbEmptySlot2 = new PictureBox
             {
@@ -236,6 +247,7 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbEmptySlot2.DoubleClick += SelectImageEmptySlot;
+            IttTip.SetToolTip(IpbEmptySlot2, "Empty Slot");
 
             var IpbEmptySlot3 = new PictureBox
             {
@@ -250,6 +262,7 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbEmptySlot3.DoubleClick += SelectImageEmptySlot;
+            IttTip.SetToolTip(IpbEmptySlot3, "Empty Slot");
 
             var IpbEmptySlot4 = new PictureBox
             {
@@ -264,6 +277,7 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbEmptySlot4.DoubleClick += SelectImageEmptySlot;
+            IttTip.SetToolTip(IpbEmptySlot4, "Empty Slot");
 
             var IpbEmptySlot5 = new PictureBox
             {
@@ -278,6 +292,7 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbEmptySlot5.DoubleClick += SelectImageEmptySlot;
+            IttTip.SetToolTip(IpbEmptySlot5, "Empty Slot");
 
             var IpbEmptySlot6 = new PictureBox
             {
@@ -292,6 +307,7 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbEmptySlot6.DoubleClick += SelectImageEmptySlot;
+            IttTip.SetToolTip(IpbEmptySlot6, "Empty Slot");
 
             var IpbEmptySlot7 = new PictureBox
             {
@@ -306,6 +322,7 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbEmptySlot7.DoubleClick += SelectImageEmptySlot;
+            IttTip.SetToolTip(IpbEmptySlot7, "Empty Slot");
 
             var IpbEmptySlot8 = new PictureBox
             {
@@ -320,6 +337,7 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbEmptySlot8.DoubleClick += SelectImageEmptySlot;
+            IttTip.SetToolTip(IpbEmptySlot8, "Empty Slot");
 
             var IpbEmptySlot9 = new PictureBox
             {
@@ -334,6 +352,7 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbEmptySlot9.DoubleClick += SelectImageEmptySlot;
+            IttTip.SetToolTip(IpbEmptySlot9, "Empty Slot");
 
             var IpbSelector = new PictureBox
             {
@@ -838,6 +857,80 @@ namespace Inventory_editor
                 ItbFontName.Text = "Microsoft Sans Serif";
                 IlbColor.BackColor = ColorTranslator.FromHtml("DodgerBlue");
                 IbtGenerate_Click(new object(), new EventArgs());
+            }
+        }
+
+        private void Export(string path)
+        {
+
+            Directory.CreateDirectory(path);
+
+            IpbBackground.Image.Save(path + "\\background.png", System.Drawing.Imaging.ImageFormat.Png);
+            IpbBody.Image.Save(path + "\\body", System.Drawing.Imaging.ImageFormat.Png);
+            IpbBodyzone.Image.Save(path + "\\bodyzone.png", System.Drawing.Imaging.ImageFormat.Png);
+            IpbDelete.Image.Save(path + "\\delete.png", System.Drawing.Imaging.ImageFormat.Png);
+            Description.Save(path + "\\descriptionzone.png", System.Drawing.Imaging.ImageFormat.Png);
+            EmptySlot.Save(path + "\\emptyslot.png", System.Drawing.Imaging.ImageFormat.Png);
+            IpbEquip.Image.Save(path + "\\equip.png", System.Drawing.Imaging.ImageFormat.Png);
+            IpbItemZone.Image.Save(path + "\\itemzone.png", System.Drawing.Imaging.ImageFormat.Png);
+            Selector.Save(path + "\\selector.png", System.Drawing.Imaging.ImageFormat.Png);
+            IpbUnEquip.Image.Save(path + "\\unequip.png", System.Drawing.Imaging.ImageFormat.Png);
+            IpbUse.Image.Save(path + "\\use.png", System.Drawing.Imaging.ImageFormat.Png);
+            IpbWeaponSlot1.Image.Save(path + "\\weaponslot1.png", System.Drawing.Imaging.ImageFormat.Png);
+            IpbWeaponSlot2.Image.Save(path + "\\weaponslot2.png", System.Drawing.Imaging.ImageFormat.Png);
+
+            Directory.CreateDirectory(path + "\\Numbers\\");
+            for (var i = 0; i < 100; i++)
+            {
+                var Temp = (Image)(Bitmap)Numbers[i];
+                Temp.Save(path + "\\Numbers\\" + (i + 1).ToString() +".png", System.Drawing.Imaging.ImageFormat.Png);
+
+            }
+
+            File.Create(path + "\\styleinfo.dat").Close();
+            StreamWriter SW = File.AppendText(path + "\\styleinfo.dat");
+            SW.WriteLine(IpbBackground.Left.ToString());
+            SW.WriteLine(IpbBackground.Top.ToString());
+            SW.WriteLine(IpbBackground.Width.ToString());
+            SW.WriteLine(IpbBackground.Height.ToString());
+            SW.WriteLine(IpbItemZone.Left.ToString());
+            SW.WriteLine(IpbItemZone.Top.ToString());
+            SW.WriteLine(IpbItemZone.Width.ToString());
+            SW.WriteLine(IpbItemZone.Height.ToString());
+            SW.WriteLine(IpbBodyzone.Left.ToString());
+            SW.WriteLine(IpbBodyzone.Top.ToString());
+            SW.WriteLine(IpbBodyzone.Width.ToString());
+            SW.WriteLine(IpbBodyzone.Height.ToString());
+            SW.WriteLine(IpbDescriptionzone.Left.ToString());
+            SW.WriteLine(IpbDescriptionzone.Top.ToString());
+            SW.WriteLine(IpbDescriptionzone.Width.ToString());
+            SW.WriteLine(IpbDescriptionzone.Height.ToString());
+            SW.WriteLine(IpbBody.Left.ToString());
+            SW.WriteLine(IpbBody.Top.ToString());
+            SW.WriteLine(IpbBody.Width.ToString());
+            SW.WriteLine(IpbBody.Height);
+            SW.WriteLine(IpbWeaponSlot1.Left.ToString());
+            SW.WriteLine(IpbWeaponSlot1.Top.ToString());
+            SW.WriteLine(IpbWeaponSlot1.Width.ToString());
+            SW.WriteLine(IpbWeaponSlot1.Height.ToString());
+            SW.WriteLine(IpbWeaponSlot2.Left.ToString());
+            SW.WriteLine(IpbWeaponSlot2.Top.ToString());
+            SW.WriteLine(IpbWeaponSlot2.Width.ToString());
+            SW.WriteLine(IpbWeaponSlot2.Height.ToString());
+            SW.Close();
+        }
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var IfbdDialog = new FolderBrowserDialog())
+            {
+                if (IfbdDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var IedExport = new ExportDialog();
+                    if (IedExport.ShowDialog() == DialogResult.OK)
+                    {
+                        Export(IfbdDialog.SelectedPath + "\\" + IedExport.StyleName);
+                    }
+                }
             }
         }
     }
