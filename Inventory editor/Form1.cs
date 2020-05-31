@@ -515,13 +515,13 @@ namespace Inventory_editor
             IpbWeaponSlot1.Image.Save(TempPath + "\\weaponslot1", System.Drawing.Imaging.ImageFormat.Png);
             IpbWeaponSlot2.Image.Save(TempPath + "\\weaponslot2", System.Drawing.Imaging.ImageFormat.Png);
 
-            Directory.CreateDirectory(TempPath + "\\Numbers\\");
-            for (var i = 0; i < 100; i++)
-            {
-                var Temp = (Image)(Bitmap)Numbers[i];
-                Temp.Save(TempPath + "\\Numbers\\" + i.ToString(), System.Drawing.Imaging.ImageFormat.Png);
+            //Directory.CreateDirectory(TempPath + "\\Numbers\\");
+            //for (var i = 0; i < 100; i++)
+            //{
+            //    var Temp = (Image)(Bitmap)Numbers[i];
+            //    Temp.Save(TempPath + "\\Numbers\\" + i.ToString(), System.Drawing.Imaging.ImageFormat.Png);
 
-            }
+            //}
 
             File.Create(TempPath + "\\styleinfo").Close();
             StreamWriter SW = File.AppendText(TempPath + "\\styleinfo");
@@ -554,7 +554,7 @@ namespace Inventory_editor
             SW.WriteLine(IpbWeaponSlot2.Width.ToString());
             SW.WriteLine(IpbWeaponSlot2.Height.ToString());
             SW.WriteLine(ItbFontName.Text);
-            SW.WriteLine((IlbColor.BackColor).ToKnownColor().ToString());
+            SW.WriteLine((ColorTranslator.ToHtml(IlbColor.BackColor)).ToString());
             SW.Close();
 
             try
@@ -571,15 +571,137 @@ namespace Inventory_editor
 
         private void Open(string path)
         {
+            string Appdata = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
+            string TempPath = Appdata + "\\Inventory editor\\Opening";
             try
             {
+                try
+                {
+                    ZipFile.ExtractToDirectory(path, TempPath);
+                }
+                catch (System.IO.IOException)
+                {
+                    Directory.Delete(TempPath, true);
+                    ZipFile.ExtractToDirectory(path, TempPath);
+                }
 
+
+                using (var filestrem = new FileStream(TempPath + "\\background", FileMode.Open))
+                {
+                    IpbBackground.Image = Image.FromStream(filestrem);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\body", FileMode.Open))
+                {
+                    IpbBody.Image = Image.FromStream(filestrem);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\bodyzone", FileMode.Open))
+                {
+                    IpbBodyzone.Image = Image.FromStream(filestrem);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\delete", FileMode.Open))
+                {
+                    IpbDelete.Image = Image.FromStream(filestrem);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\descriptionzone", FileMode.Open))
+                {
+                    Description = Image.FromStream(filestrem);
+                    IpbDescriptionzone.Image = Description;
+                    Graphics g = Graphics.FromImage(IpbDescriptionzone.Image);
+                    g.DrawString("Description of item.", new Font("MV Boli", 45, FontStyle.Bold), new SolidBrush(Color.Blue), WPercent, HPercent);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\emptyslot", FileMode.Open))
+                {
+                    EmptySlot = Image.FromStream(filestrem);
+                    ReDrawEmptySlot();
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\equip", FileMode.Open))
+                {
+                    IpbEquip.Image = Image.FromStream(filestrem);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\itemzone", FileMode.Open))
+                {
+                    IpbItemZone.Image = Image.FromStream(filestrem);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\selector", FileMode.Open))
+                {
+                    Selector = Image.FromStream(filestrem);
+                    IpbSelector.Image = Selector;
+                    ReDrawEmptySlot();
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\unequip", FileMode.Open))
+                {
+                    IpbUnEquip.Image = Image.FromStream(filestrem);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\use", FileMode.Open))
+                {
+                    IpbUse.Image = Image.FromStream(filestrem);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\weaponslot1", FileMode.Open))
+                {
+                    IpbWeaponSlot1.Image = Image.FromStream(filestrem);
+                }
+
+                using (var filestrem = new FileStream(TempPath + "\\weaponslot2", FileMode.Open))
+                {
+                    IpbWeaponSlot2.Image = Image.FromStream(filestrem);
+                }
+
+
+                StreamReader SR = new StreamReader(TempPath + "\\styleinfo");
+
+                IpbBackground.Left = Convert.ToInt32(SR.ReadLine());
+                IpbBackground.Top = Convert.ToInt32(SR.ReadLine());
+                IpbBackground.Width = Convert.ToInt32(SR.ReadLine());
+                IpbBackground.Height = Convert.ToInt32(SR.ReadLine());
+                IpbItemZone.Left = Convert.ToInt32(SR.ReadLine());
+                IpbItemZone.Top = Convert.ToInt32(SR.ReadLine());
+                IpbItemZone.Width = Convert.ToInt32(SR.ReadLine());
+                IpbItemZone.Height = Convert.ToInt32(SR.ReadLine());
+                IpbBodyzone.Left = Convert.ToInt32(SR.ReadLine());
+                IpbBodyzone.Top = Convert.ToInt32(SR.ReadLine());
+                IpbBodyzone.Width = Convert.ToInt32(SR.ReadLine());
+                IpbBodyzone.Height = Convert.ToInt32(SR.ReadLine());
+                IpbDescriptionzone.Left = Convert.ToInt32(SR.ReadLine());
+                IpbDescriptionzone.Top = Convert.ToInt32(SR.ReadLine());
+                IpbDescriptionzone.Width = Convert.ToInt32(SR.ReadLine());
+                IpbDescriptionzone.Height = Convert.ToInt32(SR.ReadLine());
+                IpbBody.Left = Convert.ToInt32(SR.ReadLine());
+                IpbBody.Top = Convert.ToInt32(SR.ReadLine());
+                IpbBody.Width = Convert.ToInt32(SR.ReadLine());
+                IpbBody.Height = Convert.ToInt32(SR.ReadLine());
+                IpbWeaponSlot1.Left = Convert.ToInt32(SR.ReadLine());
+                IpbWeaponSlot1.Top = Convert.ToInt32(SR.ReadLine());
+                IpbWeaponSlot1.Width = Convert.ToInt32(SR.ReadLine());
+                IpbWeaponSlot1.Height = Convert.ToInt32(SR.ReadLine());
+                IpbWeaponSlot2.Left = Convert.ToInt32(SR.ReadLine());
+                IpbWeaponSlot2.Top = Convert.ToInt32(SR.ReadLine());
+                IpbWeaponSlot2.Width = Convert.ToInt32(SR.ReadLine());
+                IpbWeaponSlot2.Height = Convert.ToInt32(SR.ReadLine());
+                ItbFontName.Text = SR.ReadLine();
+                IlbColor.BackColor = ColorTranslator.FromHtml(SR.ReadLine());
+
+                IbtGenerate_Click(new object(), new EventArgs());
+
+                SR.Close();
+
+                Directory.Delete(TempPath, true);
             }
-            catch
+            catch (Exception exp)
             {
-
+                MessageBox.Show("Failed to open the file.\n" + exp.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+}
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (
@@ -607,6 +729,28 @@ namespace Inventory_editor
                     Save(TIsfdSaveDialog.FileName);
 
                     TIlbSaving.Dispose();
+                    ItcMain.Enabled = true;
+                }
+            }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (
+            var TIofdOpenDialog = new OpenFileDialog
+            {
+                Title = "Open",
+                FileName = "Inventory style.ieis",
+                Filter = "Inventory style (*.ieis)|*.ieis|All file (*.*)|*.*"
+            })
+            {
+
+                if (TIofdOpenDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ItcMain.Enabled = false;
+
+                    Open(TIofdOpenDialog.FileName);
+
                     ItcMain.Enabled = true;
                 }
             }
