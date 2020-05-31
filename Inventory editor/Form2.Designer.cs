@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportDialog));
             this.ItbStyleName = new System.Windows.Forms.TextBox();
             this.IlbStyleName = new System.Windows.Forms.Label();
             this.IbtOk = new System.Windows.Forms.Button();
@@ -85,6 +86,7 @@
             this.Controls.Add(this.IlbStyleName);
             this.Controls.Add(this.ItbStyleName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExportDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Export";

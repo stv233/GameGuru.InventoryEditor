@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IfrMain));
             this.ImsMainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,35 +36,13 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ItcMain = new System.Windows.Forms.TabControl();
             this.ItpInventory = new System.Windows.Forms.TabPage();
-            this.IpbWeaponSlot2 = new System.Windows.Forms.PictureBox();
-            this.IpbWeaponSlot1 = new System.Windows.Forms.PictureBox();
-            this.IpbBody = new System.Windows.Forms.PictureBox();
-            this.IpbDescriptionzone = new System.Windows.Forms.PictureBox();
-            this.IpbBodyzone = new System.Windows.Forms.PictureBox();
-            this.IpbItemZone = new System.Windows.Forms.PictureBox();
-            this.IpbBackground = new System.Windows.Forms.PictureBox();
             this.ItpSmall = new System.Windows.Forms.TabPage();
             this.IlbUseButton = new System.Windows.Forms.Label();
             this.IlbDeleteButton = new System.Windows.Forms.Label();
             this.IlbUnequipBurtton = new System.Windows.Forms.Label();
             this.IlbEquipButton = new System.Windows.Forms.Label();
-            this.IpbUse = new System.Windows.Forms.PictureBox();
-            this.IpbDelete = new System.Windows.Forms.PictureBox();
-            this.IpbUnEquip = new System.Windows.Forms.PictureBox();
-            this.IpbEquip = new System.Windows.Forms.PictureBox();
             this.IlbSelector = new System.Windows.Forms.Label();
-            this.IpbSelector = new System.Windows.Forms.PictureBox();
             this.ItpNumbers = new System.Windows.Forms.TabPage();
-            this.IpbNumber99AndMore = new System.Windows.Forms.PictureBox();
-            this.IpbNumber99 = new System.Windows.Forms.PictureBox();
-            this.IpbNumber98 = new System.Windows.Forms.PictureBox();
-            this.IpbNumber97 = new System.Windows.Forms.PictureBox();
-            this.IpbNumber96 = new System.Windows.Forms.PictureBox();
-            this.IpbNumber5 = new System.Windows.Forms.PictureBox();
-            this.IpbNumber4 = new System.Windows.Forms.PictureBox();
-            this.IpbNumber3 = new System.Windows.Forms.PictureBox();
-            this.IpbNumber2 = new System.Windows.Forms.PictureBox();
-            this.IpbNumber1 = new System.Windows.Forms.PictureBox();
             this.IbtGenerate = new System.Windows.Forms.Button();
             this.IlbColor = new System.Windows.Forms.Label();
             this.ItbFontName = new System.Windows.Forms.TextBox();
@@ -74,9 +53,33 @@
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.IpbWeaponSlot2 = new System.Windows.Forms.PictureBox();
+            this.IpbWeaponSlot1 = new System.Windows.Forms.PictureBox();
+            this.IpbBody = new System.Windows.Forms.PictureBox();
+            this.IpbDescriptionzone = new System.Windows.Forms.PictureBox();
+            this.IpbBodyzone = new System.Windows.Forms.PictureBox();
+            this.IpbItemZone = new System.Windows.Forms.PictureBox();
+            this.IpbBackground = new System.Windows.Forms.PictureBox();
+            this.IpbUse = new System.Windows.Forms.PictureBox();
+            this.IpbDelete = new System.Windows.Forms.PictureBox();
+            this.IpbUnEquip = new System.Windows.Forms.PictureBox();
+            this.IpbEquip = new System.Windows.Forms.PictureBox();
+            this.IpbSelector = new System.Windows.Forms.PictureBox();
+            this.IpbNumber99AndMore = new System.Windows.Forms.PictureBox();
+            this.IpbNumber99 = new System.Windows.Forms.PictureBox();
+            this.IpbNumber98 = new System.Windows.Forms.PictureBox();
+            this.IpbNumber97 = new System.Windows.Forms.PictureBox();
+            this.IpbNumber96 = new System.Windows.Forms.PictureBox();
+            this.IpbNumber5 = new System.Windows.Forms.PictureBox();
+            this.IpbNumber4 = new System.Windows.Forms.PictureBox();
+            this.IpbNumber3 = new System.Windows.Forms.PictureBox();
+            this.IpbNumber2 = new System.Windows.Forms.PictureBox();
+            this.IpbNumber1 = new System.Windows.Forms.PictureBox();
             this.ImsMainMenu.SuspendLayout();
             this.ItcMain.SuspendLayout();
             this.ItpInventory.SuspendLayout();
+            this.ItpSmall.SuspendLayout();
+            this.ItpNumbers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IpbWeaponSlot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbWeaponSlot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBody)).BeginInit();
@@ -84,13 +87,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.IpbBodyzone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbItemZone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBackground)).BeginInit();
-            this.ItpSmall.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IpbUse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbUnEquip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbEquip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbSelector)).BeginInit();
-            this.ItpNumbers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IpbNumber99AndMore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbNumber99)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbNumber98)).BeginInit();
@@ -179,6 +180,181 @@
             this.ItpInventory.Text = "Inventory";
             this.ItpInventory.UseVisualStyleBackColor = true;
             // 
+            // ItpSmall
+            // 
+            this.ItpSmall.BackColor = System.Drawing.Color.DimGray;
+            this.ItpSmall.Controls.Add(this.IlbUseButton);
+            this.ItpSmall.Controls.Add(this.IlbDeleteButton);
+            this.ItpSmall.Controls.Add(this.IlbUnequipBurtton);
+            this.ItpSmall.Controls.Add(this.IlbEquipButton);
+            this.ItpSmall.Controls.Add(this.IlbSelector);
+            this.ItpSmall.Controls.Add(this.IpbUse);
+            this.ItpSmall.Controls.Add(this.IpbDelete);
+            this.ItpSmall.Controls.Add(this.IpbUnEquip);
+            this.ItpSmall.Controls.Add(this.IpbEquip);
+            this.ItpSmall.Controls.Add(this.IpbSelector);
+            this.ItpSmall.Location = new System.Drawing.Point(4, 25);
+            this.ItpSmall.Name = "ItpSmall";
+            this.ItpSmall.Padding = new System.Windows.Forms.Padding(3);
+            this.ItpSmall.Size = new System.Drawing.Size(1336, 618);
+            this.ItpSmall.TabIndex = 1;
+            this.ItpSmall.Text = "Small element";
+            // 
+            // IlbUseButton
+            // 
+            this.IlbUseButton.AutoSize = true;
+            this.IlbUseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IlbUseButton.ForeColor = System.Drawing.Color.White;
+            this.IlbUseButton.Location = new System.Drawing.Point(576, 373);
+            this.IlbUseButton.Name = "IlbUseButton";
+            this.IlbUseButton.Size = new System.Drawing.Size(185, 38);
+            this.IlbUseButton.TabIndex = 9;
+            this.IlbUseButton.Text = "Use button";
+            // 
+            // IlbDeleteButton
+            // 
+            this.IlbDeleteButton.AutoSize = true;
+            this.IlbDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IlbDeleteButton.ForeColor = System.Drawing.Color.White;
+            this.IlbDeleteButton.Location = new System.Drawing.Point(1091, 373);
+            this.IlbDeleteButton.Name = "IlbDeleteButton";
+            this.IlbDeleteButton.Size = new System.Drawing.Size(223, 38);
+            this.IlbDeleteButton.TabIndex = 8;
+            this.IlbDeleteButton.Text = "Delete button";
+            // 
+            // IlbUnequipBurtton
+            // 
+            this.IlbUnequipBurtton.AutoSize = true;
+            this.IlbUnequipBurtton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IlbUnequipBurtton.ForeColor = System.Drawing.Color.White;
+            this.IlbUnequipBurtton.Location = new System.Drawing.Point(823, 373);
+            this.IlbUnequipBurtton.Name = "IlbUnequipBurtton";
+            this.IlbUnequipBurtton.Size = new System.Drawing.Size(251, 38);
+            this.IlbUnequipBurtton.TabIndex = 7;
+            this.IlbUnequipBurtton.Text = "Unequip button";
+            // 
+            // IlbEquipButton
+            // 
+            this.IlbEquipButton.AutoSize = true;
+            this.IlbEquipButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IlbEquipButton.ForeColor = System.Drawing.Color.White;
+            this.IlbEquipButton.Location = new System.Drawing.Point(271, 373);
+            this.IlbEquipButton.Name = "IlbEquipButton";
+            this.IlbEquipButton.Size = new System.Drawing.Size(211, 38);
+            this.IlbEquipButton.TabIndex = 6;
+            this.IlbEquipButton.Text = "Equip button";
+            // 
+            // IlbSelector
+            // 
+            this.IlbSelector.AutoSize = true;
+            this.IlbSelector.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IlbSelector.ForeColor = System.Drawing.Color.White;
+            this.IlbSelector.Location = new System.Drawing.Point(50, 373);
+            this.IlbSelector.Name = "IlbSelector";
+            this.IlbSelector.Size = new System.Drawing.Size(145, 38);
+            this.IlbSelector.TabIndex = 1;
+            this.IlbSelector.Text = "Selector";
+            // 
+            // ItpNumbers
+            // 
+            this.ItpNumbers.BackColor = System.Drawing.Color.DimGray;
+            this.ItpNumbers.Controls.Add(this.IpbNumber99AndMore);
+            this.ItpNumbers.Controls.Add(this.IpbNumber99);
+            this.ItpNumbers.Controls.Add(this.IpbNumber98);
+            this.ItpNumbers.Controls.Add(this.IpbNumber97);
+            this.ItpNumbers.Controls.Add(this.IpbNumber96);
+            this.ItpNumbers.Controls.Add(this.IpbNumber5);
+            this.ItpNumbers.Controls.Add(this.IpbNumber4);
+            this.ItpNumbers.Controls.Add(this.IpbNumber3);
+            this.ItpNumbers.Controls.Add(this.IpbNumber2);
+            this.ItpNumbers.Controls.Add(this.IpbNumber1);
+            this.ItpNumbers.Controls.Add(this.IbtGenerate);
+            this.ItpNumbers.Controls.Add(this.IlbColor);
+            this.ItpNumbers.Controls.Add(this.ItbFontName);
+            this.ItpNumbers.Location = new System.Drawing.Point(4, 25);
+            this.ItpNumbers.Name = "ItpNumbers";
+            this.ItpNumbers.Padding = new System.Windows.Forms.Padding(3);
+            this.ItpNumbers.Size = new System.Drawing.Size(1336, 618);
+            this.ItpNumbers.TabIndex = 2;
+            this.ItpNumbers.Text = "Numbers";
+            // 
+            // IbtGenerate
+            // 
+            this.IbtGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IbtGenerate.Location = new System.Drawing.Point(446, 18);
+            this.IbtGenerate.Name = "IbtGenerate";
+            this.IbtGenerate.Size = new System.Drawing.Size(101, 23);
+            this.IbtGenerate.TabIndex = 2;
+            this.IbtGenerate.Text = "Generate";
+            this.IbtGenerate.UseVisualStyleBackColor = true;
+            this.IbtGenerate.Click += new System.EventHandler(this.IbtGenerate_Click);
+            // 
+            // IlbColor
+            // 
+            this.IlbColor.BackColor = System.Drawing.Color.DodgerBlue;
+            this.IlbColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IlbColor.Location = new System.Drawing.Point(378, 18);
+            this.IlbColor.Name = "IlbColor";
+            this.IlbColor.Size = new System.Drawing.Size(32, 22);
+            this.IlbColor.TabIndex = 1;
+            this.IlbColor.Click += new System.EventHandler(this.IlbColor_Click);
+            // 
+            // ItbFontName
+            // 
+            this.ItbFontName.Location = new System.Drawing.Point(83, 18);
+            this.ItbFontName.Name = "ItbFontName";
+            this.ItbFontName.Size = new System.Drawing.Size(267, 22);
+            this.ItbFontName.TabIndex = 0;
+            this.ItbFontName.Text = "Microsoft Sans Serif";
+            this.ItbFontName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // editingToolStripMenuItem
+            // 
+            this.editingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resetLocationToolStripMenuItem,
+            this.resetImagesToolStripMenuItem});
+            this.editingToolStripMenuItem.Name = "editingToolStripMenuItem";
+            this.editingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.editingToolStripMenuItem.Text = "Editing";
+            // 
+            // resetLocationToolStripMenuItem
+            // 
+            this.resetLocationToolStripMenuItem.Name = "resetLocationToolStripMenuItem";
+            this.resetLocationToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.resetLocationToolStripMenuItem.Text = "Reset Location";
+            this.resetLocationToolStripMenuItem.Click += new System.EventHandler(this.resetLocationToolStripMenuItem_Click);
+            // 
+            // resetImagesToolStripMenuItem
+            // 
+            this.resetImagesToolStripMenuItem.Name = "resetImagesToolStripMenuItem";
+            this.resetImagesToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.resetImagesToolStripMenuItem.Text = "Reset Images";
+            this.resetImagesToolStripMenuItem.Click += new System.EventHandler(this.resetImagesToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exportToolStripMenuItem.Text = "Export....";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(221, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // IpbWeaponSlot2
             // 
             this.IpbWeaponSlot2.BackgroundImage = global::Inventory_editor.Properties.Resources.EmptyBackGround;
@@ -264,70 +440,6 @@
             this.IpbBackground.TabIndex = 0;
             this.IpbBackground.TabStop = false;
             // 
-            // ItpSmall
-            // 
-            this.ItpSmall.BackColor = System.Drawing.Color.DimGray;
-            this.ItpSmall.Controls.Add(this.IlbUseButton);
-            this.ItpSmall.Controls.Add(this.IlbDeleteButton);
-            this.ItpSmall.Controls.Add(this.IlbUnequipBurtton);
-            this.ItpSmall.Controls.Add(this.IlbEquipButton);
-            this.ItpSmall.Controls.Add(this.IpbUse);
-            this.ItpSmall.Controls.Add(this.IpbDelete);
-            this.ItpSmall.Controls.Add(this.IpbUnEquip);
-            this.ItpSmall.Controls.Add(this.IpbEquip);
-            this.ItpSmall.Controls.Add(this.IlbSelector);
-            this.ItpSmall.Controls.Add(this.IpbSelector);
-            this.ItpSmall.Location = new System.Drawing.Point(4, 25);
-            this.ItpSmall.Name = "ItpSmall";
-            this.ItpSmall.Padding = new System.Windows.Forms.Padding(3);
-            this.ItpSmall.Size = new System.Drawing.Size(1336, 618);
-            this.ItpSmall.TabIndex = 1;
-            this.ItpSmall.Text = "Small element";
-            // 
-            // IlbUseButton
-            // 
-            this.IlbUseButton.AutoSize = true;
-            this.IlbUseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IlbUseButton.ForeColor = System.Drawing.Color.White;
-            this.IlbUseButton.Location = new System.Drawing.Point(576, 373);
-            this.IlbUseButton.Name = "IlbUseButton";
-            this.IlbUseButton.Size = new System.Drawing.Size(185, 38);
-            this.IlbUseButton.TabIndex = 9;
-            this.IlbUseButton.Text = "Use button";
-            // 
-            // IlbDeleteButton
-            // 
-            this.IlbDeleteButton.AutoSize = true;
-            this.IlbDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IlbDeleteButton.ForeColor = System.Drawing.Color.White;
-            this.IlbDeleteButton.Location = new System.Drawing.Point(1091, 373);
-            this.IlbDeleteButton.Name = "IlbDeleteButton";
-            this.IlbDeleteButton.Size = new System.Drawing.Size(223, 38);
-            this.IlbDeleteButton.TabIndex = 8;
-            this.IlbDeleteButton.Text = "Delete button";
-            // 
-            // IlbUnequipBurtton
-            // 
-            this.IlbUnequipBurtton.AutoSize = true;
-            this.IlbUnequipBurtton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IlbUnequipBurtton.ForeColor = System.Drawing.Color.White;
-            this.IlbUnequipBurtton.Location = new System.Drawing.Point(823, 373);
-            this.IlbUnequipBurtton.Name = "IlbUnequipBurtton";
-            this.IlbUnequipBurtton.Size = new System.Drawing.Size(251, 38);
-            this.IlbUnequipBurtton.TabIndex = 7;
-            this.IlbUnequipBurtton.Text = "Unequip button";
-            // 
-            // IlbEquipButton
-            // 
-            this.IlbEquipButton.AutoSize = true;
-            this.IlbEquipButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IlbEquipButton.ForeColor = System.Drawing.Color.White;
-            this.IlbEquipButton.Location = new System.Drawing.Point(271, 373);
-            this.IlbEquipButton.Name = "IlbEquipButton";
-            this.IlbEquipButton.Size = new System.Drawing.Size(211, 38);
-            this.IlbEquipButton.TabIndex = 6;
-            this.IlbEquipButton.Text = "Equip button";
-            // 
             // IpbUse
             // 
             this.IpbUse.BackgroundImage = global::Inventory_editor.Properties.Resources.EmptyBackGround;
@@ -368,17 +480,6 @@
             this.IpbEquip.TabIndex = 2;
             this.IpbEquip.TabStop = false;
             // 
-            // IlbSelector
-            // 
-            this.IlbSelector.AutoSize = true;
-            this.IlbSelector.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IlbSelector.ForeColor = System.Drawing.Color.White;
-            this.IlbSelector.Location = new System.Drawing.Point(50, 373);
-            this.IlbSelector.Name = "IlbSelector";
-            this.IlbSelector.Size = new System.Drawing.Size(145, 38);
-            this.IlbSelector.TabIndex = 1;
-            this.IlbSelector.Text = "Selector";
-            // 
             // IpbSelector
             // 
             this.IpbSelector.BackgroundImage = global::Inventory_editor.Properties.Resources.EmptyBackGround;
@@ -389,29 +490,6 @@
             this.IpbSelector.TabIndex = 0;
             this.IpbSelector.TabStop = false;
             this.IpbSelector.Click += new System.EventHandler(this.IpbSelector_Click);
-            // 
-            // ItpNumbers
-            // 
-            this.ItpNumbers.BackColor = System.Drawing.Color.DimGray;
-            this.ItpNumbers.Controls.Add(this.IpbNumber99AndMore);
-            this.ItpNumbers.Controls.Add(this.IpbNumber99);
-            this.ItpNumbers.Controls.Add(this.IpbNumber98);
-            this.ItpNumbers.Controls.Add(this.IpbNumber97);
-            this.ItpNumbers.Controls.Add(this.IpbNumber96);
-            this.ItpNumbers.Controls.Add(this.IpbNumber5);
-            this.ItpNumbers.Controls.Add(this.IpbNumber4);
-            this.ItpNumbers.Controls.Add(this.IpbNumber3);
-            this.ItpNumbers.Controls.Add(this.IpbNumber2);
-            this.ItpNumbers.Controls.Add(this.IpbNumber1);
-            this.ItpNumbers.Controls.Add(this.IbtGenerate);
-            this.ItpNumbers.Controls.Add(this.IlbColor);
-            this.ItpNumbers.Controls.Add(this.ItbFontName);
-            this.ItpNumbers.Location = new System.Drawing.Point(4, 25);
-            this.ItpNumbers.Name = "ItpNumbers";
-            this.ItpNumbers.Padding = new System.Windows.Forms.Padding(3);
-            this.ItpNumbers.Size = new System.Drawing.Size(1336, 618);
-            this.ItpNumbers.TabIndex = 2;
-            this.ItpNumbers.Text = "Numbers";
             // 
             // IpbNumber99AndMore
             // 
@@ -513,82 +591,6 @@
             this.IpbNumber1.TabIndex = 3;
             this.IpbNumber1.TabStop = false;
             // 
-            // IbtGenerate
-            // 
-            this.IbtGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IbtGenerate.Location = new System.Drawing.Point(446, 18);
-            this.IbtGenerate.Name = "IbtGenerate";
-            this.IbtGenerate.Size = new System.Drawing.Size(101, 23);
-            this.IbtGenerate.TabIndex = 2;
-            this.IbtGenerate.Text = "Generate";
-            this.IbtGenerate.UseVisualStyleBackColor = true;
-            this.IbtGenerate.Click += new System.EventHandler(this.IbtGenerate_Click);
-            // 
-            // IlbColor
-            // 
-            this.IlbColor.BackColor = System.Drawing.Color.DodgerBlue;
-            this.IlbColor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IlbColor.Location = new System.Drawing.Point(378, 18);
-            this.IlbColor.Name = "IlbColor";
-            this.IlbColor.Size = new System.Drawing.Size(32, 22);
-            this.IlbColor.TabIndex = 1;
-            this.IlbColor.Click += new System.EventHandler(this.IlbColor_Click);
-            // 
-            // ItbFontName
-            // 
-            this.ItbFontName.Location = new System.Drawing.Point(83, 18);
-            this.ItbFontName.Name = "ItbFontName";
-            this.ItbFontName.Size = new System.Drawing.Size(267, 22);
-            this.ItbFontName.TabIndex = 0;
-            this.ItbFontName.Text = "Microsoft Sans Serif";
-            this.ItbFontName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // editingToolStripMenuItem
-            // 
-            this.editingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.resetLocationToolStripMenuItem,
-            this.resetImagesToolStripMenuItem});
-            this.editingToolStripMenuItem.Name = "editingToolStripMenuItem";
-            this.editingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.editingToolStripMenuItem.Text = "Editing";
-            // 
-            // resetLocationToolStripMenuItem
-            // 
-            this.resetLocationToolStripMenuItem.Name = "resetLocationToolStripMenuItem";
-            this.resetLocationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.resetLocationToolStripMenuItem.Text = "Reset Location";
-            this.resetLocationToolStripMenuItem.Click += new System.EventHandler(this.resetLocationToolStripMenuItem_Click);
-            // 
-            // resetImagesToolStripMenuItem
-            // 
-            this.resetImagesToolStripMenuItem.Name = "resetImagesToolStripMenuItem";
-            this.resetImagesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.resetImagesToolStripMenuItem.Text = "Reset Images";
-            this.resetImagesToolStripMenuItem.Click += new System.EventHandler(this.resetImagesToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exportToolStripMenuItem.Text = "Export....";
-            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(221, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
             // IfrMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -598,6 +600,7 @@
             this.Controls.Add(this.ImsMainMenu);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.ImsMainMenu;
             this.Name = "IfrMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -607,6 +610,10 @@
             this.ImsMainMenu.PerformLayout();
             this.ItcMain.ResumeLayout(false);
             this.ItpInventory.ResumeLayout(false);
+            this.ItpSmall.ResumeLayout(false);
+            this.ItpSmall.PerformLayout();
+            this.ItpNumbers.ResumeLayout(false);
+            this.ItpNumbers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IpbWeaponSlot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbWeaponSlot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBody)).EndInit();
@@ -614,15 +621,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.IpbBodyzone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbItemZone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBackground)).EndInit();
-            this.ItpSmall.ResumeLayout(false);
-            this.ItpSmall.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IpbUse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbUnEquip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbEquip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbSelector)).EndInit();
-            this.ItpNumbers.ResumeLayout(false);
-            this.ItpNumbers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IpbNumber99AndMore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbNumber99)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbNumber98)).EndInit();
