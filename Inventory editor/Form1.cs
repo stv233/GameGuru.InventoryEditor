@@ -34,6 +34,7 @@ namespace Inventory_editor
             IpbBackground.Top = 0 * HPercent;
             IpbBackground.Width = 100 * WPercent;
             IpbBackground.Height = 100 * HPercent;
+            IpbBackground.DoubleClick += SelectImage;
 
             // Зона предметов.
 
@@ -41,36 +42,42 @@ namespace Inventory_editor
             IpbItemZone.Top = 1 * HPercent;
             IpbItemZone.Width = 67 * WPercent;
             IpbItemZone.Height = 68 * HPercent;
+            IpbItemZone.DoubleClick += SelectImage;
 
             // Зона тела.
             IpbBodyzone.Left = 1 * WPercent;
             IpbBodyzone.Top = 1 * HPercent;
             IpbBodyzone.Width = 28 * WPercent;
             IpbBodyzone.Height = 58 * HPercent;
+            IpbBodyzone.DoubleClick += SelectImage;
 
             // Зона описания.
             IpbDescriptionzone.Left = 32 * WPercent;
             IpbDescriptionzone.Top = 70 * HPercent;
             IpbDescriptionzone.Width = 67 * WPercent;
             IpbDescriptionzone.Height = 29 * HPercent;
+            IpbDescriptionzone.DoubleClick += SelectImage;
 
             // Тело.
             IpbBody.Left = 2 * WPercent;
             IpbBody.Top = 2 * HPercent;
             IpbBody.Width = 26 * WPercent;
             IpbBody.Height = 56 * HPercent;
+            IpbBody.DoubleClick += SelectImage;
 
             // Слот оружия 1.
             IpbWeaponSlot1.Left = 1 * WPercent;
             IpbWeaponSlot1.Top = 62 * HPercent;
             IpbWeaponSlot1.Width = 28 * WPercent;
             IpbWeaponSlot1.Height = 15 * HPercent;
+            IpbWeaponSlot1.DoubleClick += SelectImage;
 
             // Слот оружия 2.
             IpbWeaponSlot2.Left = 1 * WPercent;
             IpbWeaponSlot2.Top = 81 * HPercent;
             IpbWeaponSlot2.Width = 28 * WPercent;
             IpbWeaponSlot2.Height = 15 * HPercent;
+            IpbWeaponSlot2.DoubleClick += SelectImage;
 
             ReDrawEmptySlot();
 
@@ -78,10 +85,7 @@ namespace Inventory_editor
 
         private void ReDrawEmptySlot()
         {
-            for (var i = 0; i < IpbItemZone.Controls.Count; i++)
-            {
-                ((PictureBox)(IpbItemZone.Controls[i])).Dispose();
-            }
+            IpbItemZone.Controls.Clear();
 
             var IpbEmptySlot1 = new PictureBox
             {
@@ -94,6 +98,7 @@ namespace Inventory_editor
                 Height = Convert.ToInt32(IpbItemZone.Height / 4.5),
                 Parent = IpbItemZone
             };
+            IpbEmptySlot1.DoubleClick += SelectImageEmptySlot;
 
             var IpbEmptySlot2 = new PictureBox
             {
@@ -106,6 +111,7 @@ namespace Inventory_editor
                 Height = Convert.ToInt32(IpbItemZone.Height / 4.5),
                 Parent = IpbItemZone
             };
+            IpbEmptySlot2.DoubleClick += SelectImageEmptySlot;
 
             var IpbEmptySlot3 = new PictureBox
             {
@@ -118,6 +124,7 @@ namespace Inventory_editor
                 Height = Convert.ToInt32(IpbItemZone.Height / 4.5),
                 Parent = IpbItemZone
             };
+            IpbEmptySlot3.DoubleClick += SelectImageEmptySlot;
 
             var IpbEmptySlot4 = new PictureBox
             {
@@ -130,6 +137,7 @@ namespace Inventory_editor
                 Height = Convert.ToInt32(IpbItemZone.Height / 4.5),
                 Parent = IpbItemZone
             };
+            IpbEmptySlot4.DoubleClick += SelectImageEmptySlot;
 
             var IpbEmptySlot5 = new PictureBox
             {
@@ -142,6 +150,7 @@ namespace Inventory_editor
                 Height = Convert.ToInt32(IpbItemZone.Height / 4.5),
                 Parent = IpbItemZone
             };
+            IpbEmptySlot5.DoubleClick += SelectImageEmptySlot;
 
             var IpbEmptySlot6 = new PictureBox
             {
@@ -154,6 +163,7 @@ namespace Inventory_editor
                 Height = Convert.ToInt32(IpbItemZone.Height / 4.5),
                 Parent = IpbItemZone
             };
+            IpbEmptySlot6.DoubleClick += SelectImageEmptySlot;
 
             var IpbEmptySlot7 = new PictureBox
             {
@@ -166,6 +176,7 @@ namespace Inventory_editor
                 Height = Convert.ToInt32(IpbItemZone.Height / 4.5),
                 Parent = IpbItemZone
             };
+            IpbEmptySlot7.DoubleClick += SelectImageEmptySlot;
 
             var IpbEmptySlot8 = new PictureBox
             {
@@ -178,6 +189,7 @@ namespace Inventory_editor
                 Height = Convert.ToInt32(IpbItemZone.Height / 4.5),
                 Parent = IpbItemZone
             };
+            IpbEmptySlot8.DoubleClick += SelectImageEmptySlot;
 
             var IpbEmptySlot9 = new PictureBox
             {
@@ -190,6 +202,7 @@ namespace Inventory_editor
                 Height = Convert.ToInt32(IpbItemZone.Height / 4.5),
                 Parent = IpbItemZone
             };
+            IpbEmptySlot9.DoubleClick += SelectImageEmptySlot;
 
             var IpbSelector = new PictureBox
             {
@@ -203,6 +216,40 @@ namespace Inventory_editor
                 Parent = IpbItemZone
             };
             IpbSelector.SendToBack();
+        }
+
+        private void SelectImage(object sender, EventArgs e)
+        {
+            var TIpbPictureBox = (PictureBox)sender;
+            var TIofdOpen = new OpenFileDialog
+            {
+                Title = "Загрузить изображение",
+                Filter = "PNG (*.png)|*.png|JPEG (*.jpg;*.jpeg;*.jpe;*jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Все файлы (*.*)|*.*"
+            };
+
+            if (TIofdOpen.ShowDialog() == DialogResult.OK)
+            {
+                var TBitMap = new Bitmap(TIofdOpen.FileName);
+                TIpbPictureBox.Image = (Image)TBitMap;
+            }
+        }
+
+        private void SelectImageEmptySlot(object sender, EventArgs e)
+        {
+            var TIpbPictureBox = (PictureBox)sender;
+            var TIofdOpen = new OpenFileDialog
+            {
+                Title = "Загрузить изображение",
+                Filter = "PNG (*.png)|*.png|JPEG (*.jpg;*.jpeg;*.jpe;*jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Все файлы (*.*)|*.*"
+            };
+
+            if (TIofdOpen.ShowDialog() == DialogResult.OK)
+            {
+                var TBitMap = new Bitmap(TIofdOpen.FileName);
+                EmptySlot = (Image)TBitMap;
+            }
+
+            ReDrawEmptySlot();
         }
     }
 }
