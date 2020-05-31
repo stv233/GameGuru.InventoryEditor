@@ -39,6 +39,8 @@
             this.IpbBodyzone = new System.Windows.Forms.PictureBox();
             this.IpbDescriptionzone = new System.Windows.Forms.PictureBox();
             this.IpbBody = new System.Windows.Forms.PictureBox();
+            this.IpbWeaponSlot1 = new System.Windows.Forms.PictureBox();
+            this.IpbWeaponSlot2 = new System.Windows.Forms.PictureBox();
             this.ImsMainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -47,6 +49,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.IpbBodyzone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbDescriptionzone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBody)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IpbWeaponSlot1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IpbWeaponSlot2)).BeginInit();
             this.SuspendLayout();
             // 
             // ImsMainMenu
@@ -79,6 +83,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.IpbWeaponSlot2);
+            this.tabPage1.Controls.Add(this.IpbWeaponSlot1);
             this.tabPage1.Controls.Add(this.IpbBody);
             this.tabPage1.Controls.Add(this.IpbDescriptionzone);
             this.tabPage1.Controls.Add(this.IpbBodyzone);
@@ -167,6 +173,28 @@
             this.IpbBody.TabIndex = 4;
             this.IpbBody.TabStop = false;
             // 
+            // IpbWeaponSlot1
+            // 
+            this.IpbWeaponSlot1.BackgroundImage = global::Inventory_editor.Properties.Resources.EmptyBackGround;
+            this.IpbWeaponSlot1.Image = global::Inventory_editor.Properties.Resources.weaponslot1;
+            this.IpbWeaponSlot1.Location = new System.Drawing.Point(8, 437);
+            this.IpbWeaponSlot1.Name = "IpbWeaponSlot1";
+            this.IpbWeaponSlot1.Size = new System.Drawing.Size(423, 70);
+            this.IpbWeaponSlot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IpbWeaponSlot1.TabIndex = 5;
+            this.IpbWeaponSlot1.TabStop = false;
+            // 
+            // IpbWeaponSlot2
+            // 
+            this.IpbWeaponSlot2.BackgroundImage = global::Inventory_editor.Properties.Resources.EmptyBackGround;
+            this.IpbWeaponSlot2.Image = global::Inventory_editor.Properties.Resources.weaponslot2;
+            this.IpbWeaponSlot2.Location = new System.Drawing.Point(8, 528);
+            this.IpbWeaponSlot2.Name = "IpbWeaponSlot2";
+            this.IpbWeaponSlot2.Size = new System.Drawing.Size(423, 70);
+            this.IpbWeaponSlot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IpbWeaponSlot2.TabIndex = 6;
+            this.IpbWeaponSlot2.TabStop = false;
+            // 
             // IfrMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,6 +217,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.IpbBodyzone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbDescriptionzone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBody)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IpbWeaponSlot1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IpbWeaponSlot2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +237,8 @@
         private System.Windows.Forms.PictureBox IpbBodyzone;
         private System.Windows.Forms.PictureBox IpbDescriptionzone;
         private System.Windows.Forms.PictureBox IpbBody;
+        private System.Windows.Forms.PictureBox IpbWeaponSlot2;
+        private System.Windows.Forms.PictureBox IpbWeaponSlot1;
     }
 }
 
