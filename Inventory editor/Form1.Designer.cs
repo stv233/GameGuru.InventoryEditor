@@ -37,12 +37,14 @@
             this.IpbBackground = new System.Windows.Forms.PictureBox();
             this.IpbItemZone = new System.Windows.Forms.PictureBox();
             this.IpbBodyzone = new System.Windows.Forms.PictureBox();
+            this.IpbDescriptionzone = new System.Windows.Forms.PictureBox();
             this.ImsMainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbItemZone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBodyzone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IpbDescriptionzone)).BeginInit();
             this.SuspendLayout();
             // 
             // ImsMainMenu
@@ -75,6 +77,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.IpbDescriptionzone);
             this.tabPage1.Controls.Add(this.IpbBodyzone);
             this.tabPage1.Controls.Add(this.IpbItemZone);
             this.tabPage1.Controls.Add(this.IpbBackground);
@@ -139,6 +142,17 @@
             this.IpbBodyzone.TabIndex = 2;
             this.IpbBodyzone.TabStop = false;
             // 
+            // IpbDescriptionzone
+            // 
+            this.IpbDescriptionzone.BackgroundImage = global::Inventory_editor.Properties.Resources.EmptyBackGround;
+            this.IpbDescriptionzone.Image = global::Inventory_editor.Properties.Resources.descriptionzone;
+            this.IpbDescriptionzone.Location = new System.Drawing.Point(528, 459);
+            this.IpbDescriptionzone.Name = "IpbDescriptionzone";
+            this.IpbDescriptionzone.Size = new System.Drawing.Size(663, 139);
+            this.IpbDescriptionzone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IpbDescriptionzone.TabIndex = 3;
+            this.IpbDescriptionzone.TabStop = false;
+            // 
             // IfrMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -159,6 +173,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.IpbBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbItemZone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IpbBodyzone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IpbDescriptionzone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +190,7 @@
         private System.Windows.Forms.PictureBox IpbBackground;
         private System.Windows.Forms.PictureBox IpbItemZone;
         private System.Windows.Forms.PictureBox IpbBodyzone;
+        private System.Windows.Forms.PictureBox IpbDescriptionzone;
     }
 }
 
