@@ -151,6 +151,37 @@ namespace Inventory_editor
 
         }
 
+        private void ResetLocation()
+        {
+            IpbBackground.Left = 0 * WPercent;
+            IpbBackground.Top = 0 * HPercent;
+            IpbBackground.Width = 100 * WPercent;
+            IpbBackground.Height = 100 * HPercent;
+            IpbItemZone.Left = 32 * WPercent;
+            IpbItemZone.Top = 1 * HPercent;
+            IpbItemZone.Width = 67 * WPercent;
+            IpbItemZone.Height = 68 * HPercent;
+            IpbBodyzone.Left = 1 * WPercent;
+            IpbBodyzone.Top = 1 * HPercent;
+            IpbBodyzone.Width = 28 * WPercent;
+            IpbBodyzone.Height = 58 * HPercent;
+            IpbDescriptionzone.Left = 32 * WPercent;
+            IpbDescriptionzone.Top = 70 * HPercent;
+            IpbDescriptionzone.Width = 67 * WPercent;
+            IpbDescriptionzone.Height = 29 * HPercent;
+            IpbBody.Left = 2 * WPercent;
+            IpbBody.Top = 2 * HPercent;
+            IpbBody.Width = 26 * WPercent;
+            IpbBody.Height = 56 * HPercent;
+            IpbWeaponSlot1.Left = 1 * WPercent;
+            IpbWeaponSlot1.Top = 62 * HPercent;
+            IpbWeaponSlot1.Width = 28 * WPercent;
+            IpbWeaponSlot1.Height = 15 * HPercent;
+            IpbWeaponSlot2.Left = 1 * WPercent;
+            IpbWeaponSlot2.Top = 81 * HPercent;
+            IpbWeaponSlot2.Width = 28 * WPercent;
+            IpbWeaponSlot2.Height = 15 * HPercent;
+        }
         private void ReDrawEmptySlot()
         {
             IpbItemZone.Controls.Clear();
@@ -753,6 +784,15 @@ namespace Inventory_editor
 
                     ItcMain.Enabled = true;
                 }
+            }
+        }
+
+        private void resetLocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to reset the location?","Reset location",MessageBoxButtons.YesNo,MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                ResetLocation();
             }
         }
     }

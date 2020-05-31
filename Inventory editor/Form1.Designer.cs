@@ -67,6 +67,8 @@
             this.IbtGenerate = new System.Windows.Forms.Button();
             this.IlbColor = new System.Windows.Forms.Label();
             this.ItbFontName = new System.Windows.Forms.TextBox();
+            this.editingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ImsMainMenu.SuspendLayout();
             this.ItcMain.SuspendLayout();
             this.ItpInventory.SuspendLayout();
@@ -100,7 +102,8 @@
             // 
             this.ImsMainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ImsMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.editingToolStripMenuItem});
             this.ImsMainMenu.Location = new System.Drawing.Point(0, 0);
             this.ImsMainMenu.Name = "ImsMainMenu";
             this.ImsMainMenu.Size = new System.Drawing.Size(1342, 28);
@@ -530,6 +533,21 @@
             this.ItbFontName.Text = "Microsoft Sans Serif";
             this.ItbFontName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // editingToolStripMenuItem
+            // 
+            this.editingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resetLocationToolStripMenuItem});
+            this.editingToolStripMenuItem.Name = "editingToolStripMenuItem";
+            this.editingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.editingToolStripMenuItem.Text = "Editing";
+            // 
+            // resetLocationToolStripMenuItem
+            // 
+            this.resetLocationToolStripMenuItem.Name = "resetLocationToolStripMenuItem";
+            this.resetLocationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.resetLocationToolStripMenuItem.Text = "Reset Location";
+            this.resetLocationToolStripMenuItem.Click += new System.EventHandler(this.resetLocationToolStripMenuItem_Click);
+            // 
             // IfrMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -620,6 +638,8 @@
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetLocationToolStripMenuItem;
     }
 }
 
