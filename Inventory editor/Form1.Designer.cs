@@ -215,7 +215,7 @@
             this.MainMenuStrip = this.ImsMainMenu;
             this.Name = "IfrMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inventory edittor";
+            this.Text = "Inventory editor";
             this.Load += new System.EventHandler(this.IfrMain_Load);
             this.ImsMainMenu.ResumeLayout(false);
             this.ImsMainMenu.PerformLayout();
