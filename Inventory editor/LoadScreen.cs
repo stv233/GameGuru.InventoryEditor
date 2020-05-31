@@ -23,7 +23,7 @@ namespace Inventory_editor
 
         private void IlbSite_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://stv233/pro/en");
+            System.Diagnostics.Process.Start("http://stv233.pro/en");
         }
 
         private void ItmStart_Tick(object sender, EventArgs e)
