@@ -642,7 +642,7 @@ namespace Inventory_editor
             Directory.Delete(TempPath, true);
         }
 
-        private void Open(string path)
+        public void Open(string path)
         {
             string Appdata = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
             string TempPath = Appdata + "\\Inventory editor\\Opening";
@@ -935,6 +935,11 @@ namespace Inventory_editor
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void IfrMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

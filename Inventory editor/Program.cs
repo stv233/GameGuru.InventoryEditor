@@ -12,11 +12,11 @@ namespace Inventory_editor
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] arg)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IfrMain());
+            Application.Run(new IfrLoadScreen(arg));
         }
     }
 }

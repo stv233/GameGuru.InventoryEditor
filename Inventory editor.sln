@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory editor", "Inventory editor\Inventory editor.csproj", "{12100FB1-7DB5-4161-9570-B21C44E82CE9}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InventoryEditorWin", "InventoryEditorWin\InventoryEditorWin.vdproj", "{8990187C-AE3E-4C74-880A-86853ED93FE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{12100FB1-7DB5-4161-9570-B21C44E82CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12100FB1-7DB5-4161-9570-B21C44E82CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12100FB1-7DB5-4161-9570-B21C44E82CE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8990187C-AE3E-4C74-880A-86853ED93FE6}.Debug|Any CPU.ActiveCfg = Debug
+		{8990187C-AE3E-4C74-880A-86853ED93FE6}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

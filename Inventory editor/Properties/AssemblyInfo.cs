@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Inventory editor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("by stv233")]
 [assembly: AssemblyProduct("Inventory editor")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCopyright("Copyright © 2020  Глазатов Михаил Максимович")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
