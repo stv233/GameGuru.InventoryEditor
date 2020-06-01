@@ -908,7 +908,7 @@ namespace Inventory_editor
             SW.WriteLine(IpbBody.Left / WPercent);
             SW.WriteLine(IpbBody.Top  /  HPercent);
             SW.WriteLine(IpbBody.Width  /  WPercent);
-            SW.WriteLine(IpbBody.Height);
+            SW.WriteLine(IpbBody.Height / HPercent);
             SW.WriteLine(IpbWeaponSlot1.Left / WPercent);
             SW.WriteLine(IpbWeaponSlot1.Top  /  HPercent);
             SW.WriteLine(IpbWeaponSlot1.Width  /  WPercent);
