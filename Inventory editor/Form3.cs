@@ -94,8 +94,6 @@ namespace Inventory_editor
             IpbDescriptionzone.Top = 70 * HPercent;
             IpbDescriptionzone.Width = 67 * WPercent;
             IpbDescriptionzone.Height = 29 * HPercent;
-            Graphics g = Graphics.FromImage(IpbDescriptionzone.Image);
-            g.DrawString("Description of item.", new Font("MV Boli", 45, FontStyle.Bold), new SolidBrush(Color.Blue), WPercent, HPercent);
             IpbDescriptionzone.Invalidate();
             IpbDescriptionzone.DoubleClick += DescriptionSelectImage;
             IpbDescriptionzone.Tag = new Mouse(false, false, 0, 0);
@@ -210,8 +208,6 @@ namespace Inventory_editor
             IpbBodyzone.Image = Properties.Resources.bodyzone;
             Description = Properties.Resources.descriptionzone;
             IpbDescriptionzone.Image = Description;
-            Graphics g = Graphics.FromImage(IpbDescriptionzone.Image);
-            g.DrawString("Description of item.", new Font("MV Boli", 45, FontStyle.Bold), new SolidBrush(Color.Blue), WPercent, HPercent);
             IpbBody.Image = Properties.Resources.body;
             IpbWeaponSlot1.Image = Properties.Resources.weaponslot1;
             IpbWeaponSlot2.Image = Properties.Resources.weaponslot2;
@@ -427,8 +423,6 @@ namespace Inventory_editor
                 var TBitMap = new Bitmap(TIofdOpen.FileName);
                 Description = (Image)TBitMap;
                 IpbDescriptionzone.Image = Description;
-                Graphics g = Graphics.FromImage(IpbDescriptionzone.Image);
-                g.DrawString("Description of item.", new Font("MV Boli", 45, FontStyle.Bold), new SolidBrush(Color.Blue), WPercent, HPercent);
                 IpbDescriptionzone.Invalidate();
             }
         }
@@ -694,8 +688,6 @@ namespace Inventory_editor
                 {
                     Description = Image.FromStream(filestrem);
                     IpbDescriptionzone.Image = Description;
-                    Graphics g = Graphics.FromImage(IpbDescriptionzone.Image);
-                    g.DrawString("Description of item.", new Font("MV Boli", 45, FontStyle.Bold), new SolidBrush(Color.Blue), WPercent, HPercent);
                 }
 
                 using (var filestrem = new FileStream(TempPath + "\\emptyslot", FileMode.Open))
