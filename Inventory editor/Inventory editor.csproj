@@ -149,6 +149,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
+    <None Include="Resources\Background4.jpg" />
+    <None Include="Resources\Background3.jpg" />
+    <None Include="Resources\BackgroundUp.jpg" />
+    <None Include="Resources\Background2.jpg" />
+    <None Include="Resources\Background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
