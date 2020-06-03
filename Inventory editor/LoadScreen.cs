@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory_editor.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Inventory_editor
     {
         int Timer;
         string[] Arg;
+        bool Ask;
         public IfrLoadScreen(string [] arg)
         {
             InitializeComponent();
@@ -28,30 +30,97 @@ namespace Inventory_editor
 
         private void ItmStart_Tick(object sender, EventArgs e)
         {
-            IfrMain TIfrMain;
+            var Sett = new Settings();
             Timer++;
             if (Timer > 2)
             {
-                IlbStatus.Text = "Initialization";
-                TIfrMain = new IfrMain();
+                IlbStatus.Text = "Initialization";    
                 if (Timer > 6)
                 {
                     if (Arg.Count() == 0)
                     {
-                        TIfrMain.Show();
-                        this.Hide();
-                        ItmStart.Stop();
+                        if (Sett.CompactMod)
+                        {
+                            var TIfrMain = new IfrCompact();
+                            TIfrMain.Show();
+                            this.Hide();
+                            ItmStart.Stop();
+                        }
+                        else
+                        {
+                            var TIfrMain = new IfrMain();
+                            TIfrMain.Show();
+                            this.Hide();
+                            ItmStart.Stop();
+                        }
                     }
                     else
                     {
-                        TIfrMain.Show();
-                        TIfrMain.Open(Arg[0]);
-                        this.Hide();
-                        ItmStart.Stop();
+                        if (Sett.CompactMod)
+                        {
+                            var TIfrMain = new IfrCompact();
+                            TIfrMain.Show();
+                            TIfrMain.Open(Arg[0]);
+                            this.Hide();
+                            ItmStart.Stop();
+                        }
+                        else
+                        {
+                            var TIfrMain = new IfrMain();
+                            TIfrMain.Show();
+                            TIfrMain.Open(Arg[0]);
+                            this.Hide();
+                            ItmStart.Stop();
+                        }
                     }
                 }
             }
            
+        }
+
+        private void IfrLoadScreen_Load(object sender, EventArgs e)
+        {
+            Size TResolution = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Size;
+            var Sett = new Settings();
+            if ((TResolution.Width < 1536) || (TResolution.Height < 864))
+            {
+                if (Sett.Ask == false)
+                {
+                    if (Ask == false)
+                    {
+                        ItmStart.Stop();
+                        Ask = true;
+                        var TIDialog = new CompactDialog();
+                        if (TIDialog.ShowDialog() == DialogResult.Yes)
+                        {
+                            ItmStart.Start();
+
+                            Sett.CompactMod = true;
+
+                            Sett.Ask = TIDialog.DontAskAgain;
+
+                            Sett.Save();
+
+                            ItmStart.Start();
+
+                        }
+                        else
+                        {
+                            Sett.CompactMod = false;
+                            Sett.Save();
+                            ItmStart.Start();
+                        }
+                    }
+                }
+                else
+                {
+                    ItmStart.Start();
+                }
+            }
+            else
+            {
+                ItmStart.Start();
+            }
         }
     }
 }

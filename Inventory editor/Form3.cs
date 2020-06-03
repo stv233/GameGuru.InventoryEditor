@@ -10,14 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.IO.Compression;
-using System.Threading;
 using Inventory_editor.Properties;
 
 namespace Inventory_editor
 {
-    public partial class IfrMain : Form
+    public partial class IfrCompact : Form
     {
-        public IfrMain()
+        public IfrCompact()
         {
             InitializeComponent();
         }
@@ -48,11 +47,10 @@ namespace Inventory_editor
 
         private void IfrMain_Load(object sender, EventArgs e)
         {
-
             var IttTip = new ToolTip();
 
-            WPercent = Convert.ToInt32(IpnMain.ClientSize.Width / 100);
-            HPercent = Convert.ToInt32(IpnMain.ClientSize.Height / 100);
+            WPercent = Convert.ToInt32(ItpInventory.ClientSize.Width / 100);
+            HPercent = Convert.ToInt32(ItpInventory.ClientSize.Height / 100);
 
             // Расстановка по дефолтным позициям.
 
@@ -151,7 +149,7 @@ namespace Inventory_editor
             IbtGenerate_Click(sender, e);
 
 
-            // Селектор.
+            // Селектор
             IpbSelector.Image = Selector;
             IpbUse.Image = Properties.Resources.use;
             IpbUse.Click += SelectImage;
@@ -162,37 +160,15 @@ namespace Inventory_editor
             IpbDelete.Image = Properties.Resources.delete;
             IpbDelete.Click += SelectImage;
 
-            SetBackground();
-        }
 
-        private void IfrMain_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawString(IlbSelector.Text, IlbSelector.Font, new SolidBrush(IlbSelector.ForeColor), IlbSelector.Location);
-            e.Graphics.DrawString(IlbEquipButton.Text, IlbEquipButton.Font, new SolidBrush(IlbEquipButton.ForeColor), IlbEquipButton.Location);
-            e.Graphics.DrawString(IlbUseButton.Text, IlbUseButton.Font, new SolidBrush(IlbUseButton.ForeColor), IlbUseButton.Location);
-            e.Graphics.DrawString(IlbUnequipBurtton.Text, IlbUnequipBurtton.Font, new SolidBrush(IlbUnequipBurtton.ForeColor), IlbUnequipBurtton.Location);
-            e.Graphics.DrawString(IlbDeleteButton.Text, IlbDeleteButton.Font, new SolidBrush(IlbDeleteButton.ForeColor), IlbDeleteButton.Location);
+            // FillSizeMod.
+            var compactModToolStripMenuItem = new ToolStripMenuItem
+            {
+                Text = "Full size mod",
+            };
+            compactModToolStripMenuItem.Click += compactModToolStripMenuItem_Click;
 
-        }
-        private void SetBackground()
-        {
-            var rand = new Random();
-            if (rand.Next(1,3) == 1)
-            {
-                this.BackgroundImage = Properties.Resources.Background1;
-            }
-            else if (rand.Next(1,3) == 1)
-            {
-                this.BackgroundImage = Properties.Resources.Background2;
-            }
-            else if (rand.Next(1,3) == 1)
-            {
-                this.BackgroundImage = Properties.Resources.Background3;
-            }
-            else
-            {
-                this.BackgroundImage = Properties.Resources.Background4;
-            }
+            ImsMainMenu.Items.Add(compactModToolStripMenuItem);
         }
 
         private void ResetLocation()
@@ -832,12 +808,12 @@ namespace Inventory_editor
                     TIlbSaving.Left = this.Width / 2 - TIlbSaving.Width / 2;
                     TIlbSaving.Top = this.Height / 2 - TIlbSaving.Height / 2;
                     TIlbSaving.BringToFront();
-                    IpnMain.Enabled = false;
+                    ItcMain.Enabled = false;
 
                     Save(TIsfdSaveDialog.FileName);
 
                     TIlbSaving.Dispose();
-                    IpnMain.Enabled = true;
+                    ItcMain.Enabled = true;
                 }
             }
         }
@@ -855,11 +831,11 @@ namespace Inventory_editor
 
                 if (TIofdOpenDialog.ShowDialog() == DialogResult.OK)
                 {
-                    IpnMain.Enabled = false;
+                    ItcMain.Enabled = false;
 
                     Open(TIofdOpenDialog.FileName);
 
-                    IpnMain.Enabled = true;
+                    ItcMain.Enabled = true;
                 }
             }
         }
@@ -984,18 +960,18 @@ namespace Inventory_editor
 
         private void compactModToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to enable compact mode?", "Compact mode", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to enable full size mode?", "Compact mode", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var Sett = new Settings();
-                Sett.CompactMod = true;
+                Sett.CompactMod = false;
                 Sett.Save();
                 this.Hide();
                 string Appdata = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
                 string TempPath = Appdata + "\\Inventory editor\\";
                 Save(TempPath + "CompactMode");
-                var TIfrComoact = new IfrCompact();
-                TIfrComoact.Show();
-                TIfrComoact.Open(TempPath + "CompactMode");
+                var TIfrFull = new IfrMain();
+                TIfrFull.Show();
+                TIfrFull.Open(TempPath + "CompactMode");
                 File.Delete(TempPath + "CompactMode");
                 CanClose = true;
                 this.Close();

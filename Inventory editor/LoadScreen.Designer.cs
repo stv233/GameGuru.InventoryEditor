@@ -75,7 +75,6 @@
             // 
             // ItmStart
             // 
-            this.ItmStart.Enabled = true;
             this.ItmStart.Interval = 400;
             this.ItmStart.Tick += new System.EventHandler(this.ItmStart_Tick);
             // 
@@ -94,6 +93,7 @@
             this.Name = "IfrLoadScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loading";
+            this.Load += new System.EventHandler(this.IfrLoadScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
